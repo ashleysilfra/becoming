@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashley's Spring Plan · Apr–Aug 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage: #6b8f6b;
+    --moss: #3d5c3d;
+    --fern: #4e7c4e;
+    --sprout: #8fb88f;
+    --mist: #c8dfc8;
+    --foam: #e8f4e8;
+    --cream: #f7f9f4;
+    --bark: #2c3a2c;
+    --gold: #c8a84b;
+    --blush: #d4a5a0;
+    --sky: #a8c4d4;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--bark);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--moss);
+    position: relative;
+    overflow: hidden;
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse at 20% 80%, rgba(107,143,107,0.4) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(143,184,143,0.3) 0%, transparent 50%);
+  }
+  .header-leaves {
+    position: absolute;
+    font-size: 7rem;
+    opacity: 0.07;
+    pointer-events: none;
+    line-height: 1;
+  }
+  .leaf-1 { top: -1rem; left: -1rem; transform: rotate(-20deg); }
+  .leaf-2 { bottom: -2rem; right: -1rem; transform: rotate(40deg); font-size: 9rem; }
+  .leaf-3 { top: 0; right: 30%; transform: rotate(15deg); font-size: 5rem; }
+
+  .header-content { position: relative; z-index: 1; }
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    color: var(--cream);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.4rem;
+  }
+  .header h1 em { font-style: italic; color: #b8d4b8; }
+  .header .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--sprout);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .header .tagline {
+    font-size: 1rem;
+    color: var(--mist);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* ── NAV TABS ── */
+  .nav {
+    background: var(--bark);
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav button {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    color: var(--sprout);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 1rem 1.2rem;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .nav button:hover { color: var(--mist); }
+  .nav button.active {
+    color: #a8d4a8;
+    border-bottom-color: #6fb86f;
+    background: rgba(107,143,107,0.1);
+  }
+
+  /* ── MAIN CONTENT ── */
+  .main { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+  .section { animation: fadeIn 0.3s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 600px) {
+    .header { padding: 2rem 1rem 1.75rem; }
+    .main { padding: 1.25rem 1rem 3rem; }
+    .pillars { grid-template-columns: 1fr 1fr; }
+    .mantra-grid { grid-template-columns: 1fr; }
+    .month-content { grid-template-columns: 1fr; }
+    .daily-card { padding: 1.5rem; }
+    .timeline-header, .timeline-row { grid-template-columns: 90px repeat(5, 1fr); font-size: 0.6rem; }
+    .tl-label { font-size: 0.65rem; }
+    .tl-bar { font-size: 0.55rem; padding: 0 3px; }
+    .ws-card-header h3 { font-size: 0.95rem; }
+    .nav button { padding: 0.85rem 0.85rem; font-size: 0.62rem; }
+  }
+
+  /* ── DAILY OPENER ── */
+  .daily-card {
+    background: linear-gradient(135deg, var(--fern) 0%, var(--moss) 100%);
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .daily-card::after {
+    content: '🌿';
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1rem;
+    font-size: 5rem;
+    opacity: 0.15;
+  }
+  .daily-card .date-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--sprout);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  .daily-card .intention {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    color: var(--cream);
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+  .daily-card .focus-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .chip {
+    background: rgba(255,255,255,0.15);
+    color: var(--foam);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 0.3rem 0.9rem;
+    font-size: 0.78rem;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+  .chip.gold { background: rgba(200,168,75,0.25); border-color: rgba(200,168,75,0.4); color: #e8d080; }
+
+  .intention-refresh {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .btn {
+    background: var(--fern);
+    color: var(--cream);
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn:hover { background: var(--moss); }
+  .btn.outline {
+    background: none;
+    border: 1.5px solid var(--sprout);
+    color: var(--fern);
+  }
+  .btn.outline:hover { background: var(--foam); }
+
+  /* ── VISION CARD ── */
+  .vision-block {
+    background: var(--white);
+    border-left: 4px solid var(--sage);
+    border-radius: 0 12px 12px 0;
+    padding: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .vision-block h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--moss);
+    margin-bottom: 0.75rem;
+  }
+  .vision-block p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: #4a5c4a;
+  }
+
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .pillar {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 1.25rem;
+    border-top: 3px solid var(--sage);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .pillar:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(61,92,61,0.1); }
+  .pillar .icon { font-size: 1.6rem; margin-bottom: 0.5rem; }
+  .pillar h3 { font-size: 0.85rem; font-weight: 500; color: var(--moss); margin-bottom: 0.4rem; letter-spacing: 0.02em; }
+  .pillar p { font-size: 0.8rem; color: #7a8f7a; line-height: 1.5; }
+
+  /* ── TIMELINE ── */
+  .timeline-header {
+    display: grid;
+    grid-template-columns: 140px repeat(5, 1fr);
+    gap: 4px;
+    margin-bottom: 0.5rem;
+  }
+  .timeline-header div {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sage);
+    text-align: center;
+    padding: 0.4rem;
+  }
+  .timeline-row {
+    display: grid;
+    grid-template-columns: 140px repeat(5, 1fr);
+    gap: 4px;
+    margin-bottom: 4px;
+    align-items: center;
+  }
+  .tl-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--bark);
+    padding: 0.5rem 0.5rem 0.5rem 0;
+    line-height: 1.3;
+  }
+  .tl-cell {
+    background: var(--foam);
+    border-radius: 6px;
+    height: 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .tl-bar {
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding: 0 6px;
+    font-size: 0.65rem;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: 'DM Mono', monospace;
+  }
+  .tl-milestone {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  .c1 { background: var(--fern); }
+  .c2 { background: #5a8a6a; }
+  .c3 { background: #7a9a5a; }
+  .c4 { background: #8a7a5a; }
+  .c5 { background: #5a7a8a; }
+  .c6 { background: #7a5a8a; }
+  .c7 { background: #8a5a6a; }
+
+  /* ── WORKSTREAM CARDS ── */
+  .ws-grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+  .ws-card {
+    background: var(--white);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(61,92,61,0.06);
+    transition: box-shadow 0.2s;
+  }
+  .ws-card:hover { box-shadow: 0 4px 20px rgba(61,92,61,0.12); }
+  .ws-card-header {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    user-select: none;
+  }
+  .ws-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .ws-card-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--moss);
+    flex: 1;
+  }
+  .ws-card-header .ws-status {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+  }
+  .status-active { background: #dcf0dc; color: var(--fern); }
+  .status-explore { background: #fdf0dc; color: #8a6a30; }
+  .status-ongoing { background: #dce8f0; color: #3a6a8a; }
+
+  .ws-chevron { color: var(--sage); font-size: 0.8rem; transition: transform 0.2s; }
+  .ws-card.open .ws-chevron { transform: rotate(180deg); }
+
+  .ws-body {
+    display: none;
+    padding: 0 1.5rem 1.5rem;
+    border-top: 1px solid var(--foam);
+  }
+  .ws-card.open .ws-body { display: block; }
+
+  .ws-section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin: 1rem 0 0.5rem;
+  }
+  .milestone-list { list-style: none; }
+  .milestone-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--foam);
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  .milestone-list li:last-child { border-bottom: none; }
+  .milestone-list .when {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--sage);
+    white-space: nowrap;
+    padding-top: 2px;
+    min-width: 60px;
+  }
+  .milestone-list .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--sprout);
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+  .milestone-list .dot.gold { background: var(--gold); }
+  .milestone-list .dot.blue { background: var(--sky); }
+
+  .weekly-check { 
+    background: var(--foam); 
+    border-radius: 8px; 
+    padding: 0.9rem 1rem; 
+    font-size: 0.83rem; 
+    line-height: 1.6; 
+    color: #4a5c4a;
+  }
+  .weekly-check strong { color: var(--moss); }
+
+  /* ── MONTH VIEW ── */
+  .month-section { margin-bottom: 2rem; }
+  .month-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--moss);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .month-title .month-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    background: var(--fern);
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+    letter-spacing: 0.1em;
+  }
+  .month-tag.high { background: #8a5a5a; }
+  .month-tag.light { background: var(--sky); color: var(--bark); }
+  .month-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 0.75rem;
+  }
+  .month-item {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 0.9rem 1rem;
+    border-left: 3px solid var(--sprout);
+    font-size: 0.83rem;
+    line-height: 1.5;
+  }
+  .month-item .mi-ws {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--sage);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+  .month-item.urgent { border-left-color: #c87a5a; }
+  .month-item.financial { border-left-color: var(--gold); }
+  .month-item.relational { border-left-color: var(--blush); }
+  .month-item.spiritual { border-left-color: #a090c0; }
+  .month-item.conference { border-left-color: var(--sky); }
+
+  /* ── MANTRAS ── */
+  .mantra-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .mantra-card {
+    border-radius: 14px;
+    padding: 1.75rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .mantra-card::before {
+    content: '"';
+    position: absolute;
+    top: -0.5rem;
+    left: 0.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    color: rgba(255,255,255,0.15);
+    line-height: 1;
+  }
+  .mantra-card .quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    position: relative;
+  }
+  .mantra-card .attribution {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+  .mc1 { background: var(--fern); color: var(--cream); }
+  .mc2 { background: var(--moss); color: var(--cream); }
+  .mc3 { background: #5a7a5a; color: var(--cream); }
+  .mc4 { background: #4a6a7a; color: var(--cream); }
+  .mc5 { background: #6a5a4a; color: var(--cream); }
+  .mc6 { background: #6a4a5a; color: var(--cream); }
+
+  .affirmation-box {
+    background: linear-gradient(135deg, var(--foam), var(--mist));
+    border-radius: 14px;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .affirmation-box h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--moss);
+    font-style: italic;
+    line-height: 1.4;
+  }
+
+  /* Constraint banner */
+  .constraint-banner {
+    background: linear-gradient(90deg, #4a6a7a, #3a5a6a);
+    border-radius: 10px;
+    padding: 0.9rem 1.25rem;
+    color: var(--cream);
+    font-size: 0.83rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .constraint-banner strong { color: #b8d8e8; }
+
+  footer {
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--sprout);
+    letter-spacing: 0.1em;
+    padding: 1rem;
+    margin-top: 2rem;
+    opacity: 0.6;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-leaves leaf-1">🌿</div>
+  <div class="header-leaves leaf-2">🍃</div>
+  <div class="header-leaves leaf-3">🌱</div>
+  <div class="header-content">
+    <div class="subtitle">April – August 2026 · Personal Season Plan</div>
+    <h1>Ashley's <em>Season of Becoming</em></h1>
+    <p class="tagline">A intentional five months of leaning out, leaning in, and building a life that actually fits.</p>
+  </div>
+</div>
+
+<nav class="nav">
+  <button class="active" onclick="show('daily')">🌅 Daily</button>
+  <button onclick="show('vision')">🌿 Vision</button>
+  <button onclick="show('streams')">🗂 Workstreams</button>
+  <button onclick="show('timeline')">📅 Timeline</button>
+  <button onclick="show('months')">🗓 Monthly</button>
+  <button onclick="show('mantras')">✨ Mantras</button>
+</nav>
+
+<div class="main">
+
+  <!-- ═══ DAILY ═══ -->
+  <div id="daily" class="section">
+    <div class="daily-card" id="dailyCard">
+      <div class="date-label" id="dailyDate">Loading...</div>
+      <div class="intention" id="dailyIntention">Loading your intention...</div>
+      <div class="focus-chips" id="dailyChips"></div>
+    </div>
+    <div class="intention-refresh">
+      <button class="btn" onclick="refreshIntention()">✦ New Intention</button>
+      <button class="btn outline" onclick="show('mantras')">Open Mantras</button>
+    </div>
+    <div class="vision-block">
+      <h2>Your Morning Reminder</h2>
+      <p>You are in a <strong>season of intentional transition</strong>. The goal isn't to do more — it's to do the right things. You're allowed to take up less space at work, more space in your creative life, and to move toward a future you actually want. <em>This is not recklessness. It's courage.</em></p>
+      <br>
+      <p>And yes — privilege made some of this possible. That's true, and you don't need to pretend otherwise. But <strong>punishing yourself for having options doesn't give those options to anyone else.</strong> Using your freedom well — to build things, to have honest conversations, to show up more fully — that is the work. Suffering quietly in a life that doesn't fit you helps no one. <em>Living intentionally might.</em></p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="icon">🏗️</div>
+        <h3>Build Something Real</h3>
+        <p>Pursue the contractor license. Work with your GC. Make things with your hands.</p>
+      </div>
+      <div class="pillar">
+        <div class="icon">🌿</div>
+        <h3>Right-Size the Day Job</h3>
+        <p>Lean out consciously. Stay safe, stay caring — but stop over-carrying.</p>
+      </div>
+      <div class="pillar">
+        <div class="icon">💬</div>
+        <h3>Seek Clarity in Relationships</h3>
+        <p>Have honest conversations about futures. Let the truth surface.</p>
+      </div>
+      <div class="pillar">
+        <div class="icon">🕯️</div>
+        <h3>Tend the Spiritual Work</h3>
+        <p>Explore your niche. Follow the new lead. Grow this offering.</p>
+      </div>
+      <div class="pillar">
+        <div class="icon">🌱</div>
+        <h3>Build Financial Runway</h3>
+        <p>Spend intentionally. Prove to yourself that less is enough.</p>
+      </div>
+      <div class="pillar">
+        <div class="icon">🎪</div>
+        <h3>Deliver the Conference</h3>
+        <p>Honor this commitment fully. Let it end well. Then exhale.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ VISION ═══ -->
+  <div id="vision" class="section">
+    <div class="vision-block">
+      <h2>The North Star</h2>
+      <p>This is a five-month experiment in building a life on your own terms. You've spent years being excellent at a job that asks a lot of you — and you've given it. Now you're asking a different question: <em>What would it look like if I directed some of that excellence toward myself?</em></p>
+      <br>
+      <p>The answer isn't grand or sudden. It looks like: taking Fridays off and actually resting. Following a lead that came in today about spiritual leadership. Showing up on a job site with your GC and learning to read a set of plans. Having a real conversation with Ross about what you both want. Letting a work email wait until tomorrow.</p>
+      <br>
+      <p>A word about privilege: yes, you have it. Having more options than most people is real, and you're right not to be glib about it. But here's the thing — <strong>shrinking yourself doesn't close that gap.</strong> Staying in a life that doesn't fit you out of guilt doesn't help anyone who has fewer choices. What might actually matter is what you do with the freedom: build something, guide someone, have a conversation that creates more light in the world. That's the direction to run in.</p>
+      <br>
+      <p>By August, you want to be able to say: <strong>I know more clearly what I'm building toward. I've started building it. And I proved I can live on less and feel like more.</strong></p>
+    </div>
+
+    <div class="affirmation-box">
+      <h2>"I am not abandoning responsibility.<br>I am finding its right size."</h2>
+    </div>
+
+    <div class="vision-block">
+      <h2>What Success Looks Like in August</h2>
+      <p>
+        ✦ Your reduced schedule is extended through year-end with your boss's blessing.<br><br>
+        ✦ You're enrolled in at least one technical college course for the fall semester.<br><br>
+        ✦ You've logged hands-on hours with your GC and have a sense of what your path to licensure actually looks like.<br><br>
+        ✦ You've had the honest conversations — with Ross, with your co-founders — and you know more than you did.<br><br>
+        ✦ The new spiritual leadership lead has been followed up, and you have a clearer sense of what that offering could become.<br><br>
+        ✦ The July conference is behind you, and you delivered it well without burning out.<br><br>
+        ✦ You've meaningfully reduced discretionary spending and feel financially steadier.<br><br>
+        ✦ You feel more like yourself than you did in January.
+      </p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="icon">🏗️</div>
+        <h3>The Builder</h3>
+        <p>You make things. This is not a hobby, it's a calling. Time to make it a career path.</p>
+      </div>
+      <div class="pillar">
+        <div class="icon">🌿</div>
+        <h3>The Leaner</h3>
+        <p>Leaning out of overwork isn't laziness. It's reclaiming your energy for what matters.</p>
+      </div>
+      <div class="pillar">
+        <div class="icon">💬</div>
+        <h3>The Truth-Teller</h3>
+        <p>The conversations you need to have are the ones you've been avoiding. Start them.</p>
+      </div>
+      <div class="pillar">
+        <div class="icon">🕯️</div>
+        <h3>The Guide</h3>
+        <p>Your spiritual leadership work has a niche and an audience. Follow the thread.</p>
+      </div>
+      <div class="pillar">
+        <div class="icon">🌱</div>
+        <h3>The Steward</h3>
+        <p>Spend like someone building a life they can afford. That person is you.</p>
+      </div>
+      <div class="pillar">
+        <div class="icon">🎪</div>
+        <h3>The Finisher</h3>
+        <p>The conference is a commitment. Honor it. Let it be the last big output before a new season.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ WORKSTREAMS ═══ -->
+  <div id="streams" class="section">
+
+    <!-- WS1 -->
+    <div class="ws-grid">
+    <div class="ws-card" id="ws1">
+      <div class="ws-card-header" onclick="toggleWS('ws1')">
+        <div class="ws-icon">🌿</div>
+        <h3>The Day Job — Lean Out</h3>
+        <span class="ws-status status-active">Active</span>
+        <span class="ws-chevron">▼</span>
+      </div>
+      <div class="ws-body">
+        <div class="ws-section-label">Intent</div>
+        <div class="weekly-check">Preserve employment, honor your colleagues, <strong>stop over-carrying</strong>. Define what appropriate ownership actually looks like and hold to it. The reduced schedule continues — protect it.</div>
+        <div class="ws-section-label">Key Milestones</div>
+        <ul class="milestone-list">
+          <li><span class="when">Apr–May</span><div class="dot"></div><div>Draft your personal definition of "appropriate ownership" — what does it mean to be good at this job without giving it your whole self?</div></li>
+          <li><span class="when">WFH Days</span><div class="dot"></div><div>Ritual: start at least 1 WFH day/week with a personal project or chore before opening work apps</div></li>
+          <li><span class="when">Late May</span><div class="dot gold"></div><div>⭐ Initiate conversation with boss about extending reduced schedule through year-end</div></li>
+          <li><span class="when">June</span><div class="dot gold"></div><div>⭐ Extension confirmed. Schedule bimonthly reassessment check-ins with yourself</div></li>
+          <li><span class="when">Ongoing</span><div class="dot"></div><div>Monthly: write one paragraph naming what you're choosing <em>not</em> to own this month at work, and why that's okay</div></li>
+        </ul>
+        <div class="ws-section-label">Weekly Check-in Prompt</div>
+        <div class="weekly-check"><strong>Ask yourself:</strong> Where did I over-extend this week? Where did I hold the line well? What did I do for myself on a work day? Did I protect Friday?
+        <br><br><em>And if the guilt shows up:</em> Did I confuse self-punishment with fairness? Overworking doesn't redistribute anything. Using this time well might.</div>
+      </div>
+    </div>
+
+    <!-- WS2 -->
+    <div class="ws-card" id="ws2">
+      <div class="ws-card-header" onclick="toggleWS('ws2')">
+        <div class="ws-icon">🏗️</div>
+        <h3>Contractor License Path</h3>
+        <span class="ws-status status-active">Active</span>
+        <span class="ws-chevron">▼</span>
+      </div>
+      <div class="ws-body">
+        <div class="ws-section-label">Intent</div>
+        <div class="weekly-check">Turn your lifelong building practice into a credentialed career path. Understand the Georgia requirements, get into school this fall, and start logging hands-on time with your GC now.</div>
+        <div class="ws-section-label">Key Milestones</div>
+        <ul class="milestone-list">
+          <li><span class="when">Apr</span><div class="dot"></div><div>Research Georgia residential contractor license requirements in full (education hours, experience docs, exam, application)</div></li>
+          <li><span class="when">Apr</span><div class="dot"></div><div>Contact your GC — have the conversation about working alongside him on active projects</div></li>
+          <li><span class="when">Apr–May</span><div class="dot"></div><div>Investigate retroactive credit — what prior work can be documented and counted?</div></li>
+          <li><span class="when">May</span><div class="dot"></div><div>Identify 2–3 qualifying courses at Chattahoochee Tech, Georgia Piedmont, or similar</div></li>
+          <li><span class="when">May–Jun</span><div class="dot gold"></div><div>⭐ Register for fall semester course(s) — registration typically opens mid-summer, confirm dates early</div></li>
+          <li><span class="when">May+</span><div class="dot"></div><div>Begin logging hours with GC on his projects (keep a simple log: date, project, hours, tasks)</div></li>
+          <li><span class="when">Aug</span><div class="dot gold"></div><div>⭐ Fall enrollment confirmed + at least one GC project session completed</div></li>
+        </ul>
+        <div class="ws-section-label">Weekly Check-in Prompt</div>
+        <div class="weekly-check"><strong>Ask yourself:</strong> Did I make one concrete move on the license path this week? Have I been in touch with my GC? Am I keeping my hours log?</div>
+      </div>
+    </div>
+
+    <!-- WS3 -->
+    <div class="ws-card" id="ws3">
+      <div class="ws-card-header" onclick="toggleWS('ws3')">
+        <div class="ws-icon">💬</div>
+        <h3>Futures & Alignment — Relationships</h3>
+        <span class="ws-status status-explore">Exploring</span>
+        <span class="ws-chevron">▼</span>
+      </div>
+      <div class="ws-body">
+        <div class="ws-section-label">Intent</div>
+        <div class="weekly-check">Create conditions for clarity — not decisions, just truth. What do you and Ross each actually want? Where are your co-founders truly aligned or not? Let the conversations happen without pressure to resolve everything at once.</div>
+        <div class="ws-section-label">Key Milestones</div>
+        <ul class="milestone-list">
+          <li><span class="when">Apr</span><div class="dot blue"></div><div>Schedule a dedicated "futures conversation" with Ross — not a fight, a real exploration of what each of you wants</div></li>
+          <li><span class="when">Apr–May</span><div class="dot blue"></div><div>Have at least one honest conversation with each co-founder about vision and compatibility</div></li>
+          <li><span class="when">May</span><div class="dot blue"></div><div>Personal reflection: write out what a future would look like that would make you feel genuinely alive — without editing for anyone else's preferences</div></li>
+          <li><span class="when">Jun–Jul</span><div class="dot blue"></div><div>Reassess: do you have more clarity? What do you still need to understand?</div></li>
+          <li><span class="when">Aug</span><div class="dot gold"></div><div>⭐ By end of season: you know more than you did. You've had the conversations. You're not still avoiding them.</div></li>
+        </ul>
+        <div class="ws-section-label">Weekly Check-in Prompt</div>
+        <div class="weekly-check"><strong>Ask yourself:</strong> Am I avoiding a conversation I need to have? What truth am I not yet saying out loud? What did I learn this week about what I actually want?</div>
+      </div>
+    </div>
+
+    <!-- WS4 -->
+    <div class="ws-card" id="ws4">
+      <div class="ws-card-header" onclick="toggleWS('ws4')">
+        <div class="ws-icon">🕯️</div>
+        <h3>Spiritual Leadership Practice</h3>
+        <span class="ws-status status-explore">Exploring</span>
+        <span class="ws-chevron">▼</span>
+      </div>
+      <div class="ws-body">
+        <div class="ws-section-label">Intent</div>
+        <div class="weekly-check">You have a niche in progressive spiritual leadership circles — Reform Judaism, values-driven teams. Explore whether this can become substantial income and a real pivot path. Follow the thread that just arrived.</div>
+        <div class="ws-section-label">Key Milestones</div>
+        <ul class="milestone-list">
+          <li><span class="when">This Week</span><div class="dot gold"></div><div>⭐ Follow up with the new lead that came in today — don't let it cool</div></li>
+          <li><span class="when">Apr</span><div class="dot"></div><div>Write a clear one-paragraph description of what you offer in this space — for yourself first, then for potential clients</div></li>
+          <li><span class="when">Apr–May</span><div class="dot"></div><div>Have conversations with 2–3 past clients about how they'd describe the value you brought</div></li>
+          <li><span class="when">May</span><div class="dot"></div><div>Research how other practitioners in adjacent spaces find clients — referral networks, Reform Jewish professional circles, conferences, etc.</div></li>
+          <li><span class="when">Jun</span><div class="dot"></div><div>Draft rough income model: what would this need to look like to replace a meaningful portion of consulting income?</div></li>
+          <li><span class="when">Aug</span><div class="dot gold"></div><div>⭐ At least one new client relationship or serious conversation. A clearer sense of whether this is a real pivot path.</div></li>
+        </ul>
+        <div class="ws-section-label">Weekly Check-in Prompt</div>
+        <div class="weekly-check"><strong>Ask yourself:</strong> Did I do one thing this week to develop this practice? Have I stayed in touch with the new lead? Am I letting myself take this seriously as a real possibility?</div>
+      </div>
+    </div>
+
+    <!-- WS5 -->
+    <div class="ws-card" id="ws5">
+      <div class="ws-card-header" onclick="toggleWS('ws5')">
+        <div class="ws-icon">🎪</div>
+        <h3>July Conference — Nonprofit</h3>
+        <span class="ws-status status-ongoing">Constraint</span>
+        <span class="ws-chevron">▼</span>
+      </div>
+      <div class="ws-body">
+        <div class="ws-section-label">Intent</div>
+        <div class="weekly-check"><strong>This is a capacity constraint, not just a workstream.</strong> Honor the commitment fully and deliver it well. Protect yourself from burnout by being intentional about energy during crunch time. Let June–July be lighter on other goals.</div>
+        <div class="ws-section-label">Key Milestones</div>
+        <ul class="milestone-list">
+          <li><span class="when">Apr–May</span><div class="dot blue"></div><div>Steady planning phase — keep momentum without sprint-mode energy</div></li>
+          <li><span class="when">Jun</span><div class="dot"></div><div>Final push: accept that June gets consumed. Dial back ambitions on other workstreams.</div></li>
+          <li><span class="when">Early Jul</span><div class="dot gold"></div><div>⭐ Conference happens. You deliver it.</div></li>
+          <li><span class="when">Late Jul</span><div class="dot gold"></div><div>⭐ Debrief + exhale. Write what you learned. Rest.</div></li>
+          <li><span class="when">Aug</span><div class="dot"></div><div>Return to other workstreams with fresh energy and the season's second wind</div></li>
+        </ul>
+        <div class="ws-section-label">Weekly Check-in Prompt</div>
+        <div class="weekly-check"><strong>Ask yourself:</strong> Am I pacing this well, or am I already in crisis mode before the crisis? What can I delegate or simplify? Is my energy sustainable?</div>
+      </div>
+    </div>
+
+    <!-- WS6 -->
+    <div class="ws-card" id="ws6">
+      <div class="ws-card-header" onclick="toggleWS('ws6')">
+        <div class="ws-icon">🌱</div>
+        <h3>Financial Intentionality</h3>
+        <span class="ws-status status-ongoing">Ongoing</span>
+        <span class="ws-chevron">▼</span>
+      </div>
+      <div class="ws-body">
+        <div class="ws-section-label">Intent</div>
+        <div class="weekly-check">Prove to yourself that you can live on less and feel okay — even good. Build the runway that makes every other pivot feel possible rather than terrifying. This is about <strong>freedom, not deprivation.</strong></div>
+        <div class="ws-section-label">Key Milestones</div>
+        <ul class="milestone-list">
+          <li><span class="when">Apr</span><div class="dot gold"></div><div>⭐ Spend audit: identify and cut optional recurring expenses (extra fitness classes, monthly massage, etc.)</div></li>
+          <li><span class="when">Apr</span><div class="dot"></div><div>Set a monthly spending target — not punishing, but intentional</div></li>
+          <li><span class="when">Apr+</span><div class="dot"></div><div>Resourcefulness practice: before buying anything for a project, check what you already have first</div></li>
+          <li><span class="when">Monthly</span><div class="dot"></div><div>Review last month's spending — celebrate wins, adjust without shame</div></li>
+          <li><span class="when">Aug</span><div class="dot gold"></div><div>⭐ Look back at 5 months of data: do you feel more financially confident? What would it now feel like to make less?</div></li>
+        </ul>
+        <div class="ws-section-label">Weekly Check-in Prompt</div>
+        <div class="weekly-check"><strong>Ask yourself:</strong> Did I spend in line with my values this week? Did I use what I have before buying something new? What optional thing did I let go of — and how did that feel?
+        <br><br><em>And if the guilt shows up:</em> Having more than others is real. But spending carelessly doesn't help them, and building financial steadiness gives you real choices — including choices that create space to contribute more.</div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <!-- ═══ TIMELINE ═══ -->
+  <div id="timeline" class="section">
+    <div class="vision-block" style="margin-bottom:1.5rem;">
+      <h2>5-Month Overview</h2>
+      <p>A rough map of when each workstream is most active, and where the conference creates a natural constraint on everything else.</p>
+    </div>
+    <div class="constraint-banner">
+      ⚠️ <div><strong>Conference Constraint:</strong> June crunch → July event. Plan other workstreams to be lighter in this window. August is the rebound.</div>
+    </div>
+
+    <div style="overflow-x:auto;">
+    <div style="min-width:560px;">
+    <div class="timeline-header">
+      <div></div>
+      <div>APR</div>
+      <div>MAY</div>
+      <div>JUN</div>
+      <div>JUL</div>
+      <div>AUG</div>
+    </div>
+
+    <div class="timeline-row">
+      <div class="tl-label">🌿 Day Job</div>
+      <div class="tl-cell"><div class="tl-bar c1" style="left:4px;right:4px;">lean out practice</div></div>
+      <div class="tl-cell"><div class="tl-bar c1" style="left:4px;right:4px;"><span class="tl-milestone" style="right:4px;" title="Boss conversation">⭐</span></div></div>
+      <div class="tl-cell"><div class="tl-bar c1" style="left:4px;right:50%;">ext. confirmed</div></div>
+      <div class="tl-cell"><div class="tl-bar c1" style="left:4px;right:4px;opacity:0.4;">maintenance</div></div>
+      <div class="tl-cell"><div class="tl-bar c1" style="left:4px;right:4px;opacity:0.4;">maintenance</div></div>
+    </div>
+
+    <div class="timeline-row">
+      <div class="tl-label">🏗️ Contractor</div>
+      <div class="tl-cell"><div class="tl-bar c2" style="left:4px;right:4px;">research</div></div>
+      <div class="tl-cell"><div class="tl-bar c2" style="left:4px;right:4px;">courses + enroll</div></div>
+      <div class="tl-cell"><div class="tl-bar c2" style="left:4px;right:60%;opacity:0.5;"></div></div>
+      <div class="tl-cell"><div class="tl-bar c2" style="left:4px;right:4px;opacity:0.3;"></div></div>
+      <div class="tl-cell"><div class="tl-bar c2" style="left:4px;right:4px;"><span style="font-size:0.6rem">⭐enrolled</span></div></div>
+    </div>
+
+    <div class="timeline-row">
+      <div class="tl-label">💬 Alignment</div>
+      <div class="tl-cell"><div class="tl-bar c4" style="left:4px;right:4px;">conversations</div></div>
+      <div class="tl-cell"><div class="tl-bar c4" style="left:4px;right:4px;">reflection</div></div>
+      <div class="tl-cell"><div class="tl-bar c4" style="left:4px;right:50%;opacity:0.4;"></div></div>
+      <div class="tl-cell"><div class="tl-bar c4" style="opacity:0;"></div></div>
+      <div class="tl-cell"><div class="tl-bar c4" style="left:4px;right:4px;opacity:0.6;">reassess</div></div>
+    </div>
+
+    <div class="timeline-row">
+      <div class="tl-label">🕯️ Spiritual</div>
+      <div class="tl-cell"><div class="tl-bar c5" style="left:4px;right:4px;"><span style="font-size:0.6rem">⭐follow lead</span></div></div>
+      <div class="tl-cell"><div class="tl-bar c5" style="left:4px;right:4px;">define offering</div></div>
+      <div class="tl-cell"><div class="tl-bar c5" style="left:4px;right:60%;opacity:0.3;"></div></div>
+      <div class="tl-cell"><div class="tl-bar c5" style="opacity:0;"></div></div>
+      <div class="tl-cell"><div class="tl-bar c5" style="left:4px;right:4px;">model income</div></div>
+    </div>
+
+    <div class="timeline-row">
+      <div class="tl-label">🎪 Conference</div>
+      <div class="tl-cell"><div class="tl-bar c6" style="left:4px;right:4px;opacity:0.5;">planning</div></div>
+      <div class="tl-cell"><div class="tl-bar c6" style="left:4px;right:4px;opacity:0.7;">planning</div></div>
+      <div class="tl-cell"><div class="tl-bar c6" style="left:4px;right:4px;">CRUNCH 🔥</div></div>
+      <div class="tl-cell"><div class="tl-bar c6" style="left:4px;right:40%;">EVENT ⭐</div></div>
+      <div class="tl-cell"><div class="tl-bar c6" style="left:4px;right:70%;opacity:0.4;">debrief</div></div>
+    </div>
+
+    <div class="timeline-row">
+      <div class="tl-label">🌱 Finance</div>
+      <div class="tl-cell"><div class="tl-bar c3" style="left:4px;right:4px;"><span style="font-size:0.6rem">⭐audit+cut</span></div></div>
+      <div class="tl-cell"><div class="tl-bar c3" style="left:4px;right:4px;">intentional spend</div></div>
+      <div class="tl-cell"><div class="tl-bar c3" style="left:4px;right:4px;">review</div></div>
+      <div class="tl-cell"><div class="tl-bar c3" style="left:4px;right:4px;">review</div></div>
+      <div class="tl-cell"><div class="tl-bar c3" style="left:4px;right:4px;"><span style="font-size:0.6rem">⭐5mo reflect</span></div></div>
+    </div>
+
+    </div>
+    </div>
+
+    <div style="margin-top:1.5rem;" class="vision-block">
+      <h2>Key ⭐ Milestones</h2>
+      <p>
+        <strong>This week:</strong> Follow up with new spiritual leadership lead<br>
+        <strong>April:</strong> Spend audit complete · GC conversation initiated · Research licensure requirements<br>
+        <strong>Late May:</strong> Boss conversation about schedule extension<br>
+        <strong>May–Jun:</strong> Fall course enrollment confirmed<br>
+        <strong>July:</strong> Conference delivered<br>
+        <strong>August:</strong> 5-month reflection across all workstreams
+      </p>
+    </div>
+  </div>
+
+  <!-- ═══ MONTHLY ═══ -->
+  <div id="months" class="section">
+
+    <div class="month-section">
+      <div class="month-title">April <span class="month-tag">Activate</span></div>
+      <div class="month-content">
+        <div class="month-item urgent"><div class="mi-ws">🕯️ Spiritual</div>Follow up with new lead this week. Don't let it cool.</div>
+        <div class="month-item financial"><div class="mi-ws">🌱 Finance</div>Spend audit: identify and cut optional recurring costs. Set monthly target.</div>
+        <div class="month-item"><div class="mi-ws">🏗️ Contractor</div>Research GA licensure requirements in full. Contact your GC about working together.</div>
+        <div class="month-item relational"><div class="mi-ws">💬 Alignment</div>Schedule the futures conversation with Ross. Reach out to co-founders.</div>
+        <div class="month-item"><div class="mi-ws">🌿 Day Job</div>Write your personal definition of "appropriate ownership." Start the WFH ritual.</div>
+        <div class="month-item conference"><div class="mi-ws">🎪 Conference</div>Steady planning. Build momentum without sprint energy.</div>
+      </div>
+    </div>
+
+    <div class="month-section">
+      <div class="month-title">May <span class="month-tag">Build</span></div>
+      <div class="month-content">
+        <div class="month-item"><div class="mi-ws">🌿 Day Job</div>Prepare for the boss conversation. Know what you're asking for and why it's good for everyone.</div>
+        <div class="month-item"><div class="mi-ws">🏗️ Contractor</div>Identify qualifying courses. Investigate retroactive experience credit. Begin logging GC hours.</div>
+        <div class="month-item relational"><div class="mi-ws">💬 Alignment</div>Write out — for yourself only — what a future would look like that makes you feel alive.</div>
+        <div class="month-item spiritual"><div class="mi-ws">🕯️ Spiritual</div>Talk with 2–3 past clients. Draft your one-paragraph offering description.</div>
+        <div class="month-item financial"><div class="mi-ws">🌱 Finance</div>Month 2 review: are you hitting your target? What's hard, what's easier than expected?</div>
+        <div class="month-item conference"><div class="mi-ws">🎪 Conference</div>Ramp up planning. Accept that June will be heavier — set yourself up now.</div>
+      </div>
+    </div>
+
+    <div class="month-section">
+      <div class="month-title">June <span class="month-tag high">Crunch</span></div>
+      <div class="month-content">
+        <div class="month-item urgent"><div class="mi-ws">🌿 Day Job</div>⭐ Have the conversation with your boss about extending the schedule through year-end.</div>
+        <div class="month-item"><div class="mi-ws">🏗️ Contractor</div>Confirm fall registration (check when it opens — may be now). Keep logging GC hours.</div>
+        <div class="month-item conference"><div class="mi-ws">🎪 Conference</div>This month belongs to the conference. Let the other workstreams breathe. Give yourself permission.</div>
+        <div class="month-item financial"><div class="mi-ws">🌱 Finance</div>Mid-season spending check. How are you doing on the intentionality practice?</div>
+      </div>
+    </div>
+
+    <div class="month-section">
+      <div class="month-title">July <span class="month-tag high">Deliver</span></div>
+      <div class="month-content">
+        <div class="month-item conference"><div class="mi-ws">🎪 Conference</div>⭐ The conference happens. You show up. You deliver it. This is enough.</div>
+        <div class="month-item conference"><div class="mi-ws">🎪 Conference</div>After: write a debrief. What worked, what you'd change, what you learned. Then rest.</div>
+        <div class="month-item financial"><div class="mi-ws">🌱 Finance</div>Spending review. Notice how the financial discipline feels after 3+ months.</div>
+        <div class="month-item"><div class="mi-ws">🌿 Day Job</div>Hold the line. Reduced schedule stays in place even through conference chaos.</div>
+      </div>
+    </div>
+
+    <div class="month-section">
+      <div class="month-title">August <span class="month-tag light">Reflect + Relaunch</span></div>
+      <div class="month-content">
+        <div class="month-item"><div class="mi-ws">All Streams</div>⭐ Full season retrospective: what did you build, learn, and prove to yourself?</div>
+        <div class="month-item"><div class="mi-ws">🏗️ Contractor</div>⭐ Fall enrollment confirmed. At least one GC project session complete.</div>
+        <div class="month-item spiritual"><div class="mi-ws">🕯️ Spiritual</div>⭐ At least one new client conversation or serious lead. Clearer sense of pivot potential.</div>
+        <div class="month-item financial"><div class="mi-ws">🌱 Finance</div>⭐ 5-month spending reflection: do you feel more financially confident? What would it feel like to earn less?</div>
+        <div class="month-item relational"><div class="mi-ws">💬 Alignment</div>What do you know now that you didn't in April? Have you had the conversations?</div>
+        <div class="month-item"><div class="mi-ws">🌿 Day Job</div>Reassess: what does the next chapter look like? What's still true and what's changed?</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ MANTRAS ═══ -->
+  <div id="mantras" class="section">
+    <div class="affirmation-box" style="margin-bottom:1.5rem;">
+      <h2>"This is not a crisis.<br><em>This is a becoming.</em>"</h2>
+    </div>
+
+    <div class="mantra-grid">
+      <div class="mantra-card mc1">
+        <div class="quote">I am allowed to take up exactly as much space as I need — at work, at home, in the world.</div>
+        <div class="attribution">For the lean-out days</div>
+      </div>
+      <div class="mantra-card mc2">
+        <div class="quote">Making things with my hands is not a hobby. It is how I know I am alive.</div>
+        <div class="attribution">For the builder</div>
+      </div>
+      <div class="mantra-card mc3">
+        <div class="quote">The conversation I'm avoiding is probably the one I most need to have.</div>
+        <div class="attribution">For the relational work</div>
+      </div>
+      <div class="mantra-card mc4">
+        <div class="quote">Spending less is not punishment. It is proof that I trust myself to build something better.</div>
+        <div class="attribution">For the financial practice</div>
+      </div>
+      <div class="mantra-card mc5">
+        <div class="quote">I have been a spiritual guide to others. I am allowed to take my own calling seriously.</div>
+        <div class="attribution">For the leadership work</div>
+      </div>
+      <div class="mantra-card mc6">
+        <div class="quote">I can honor this commitment fully and let it be the last of its kind. Both things are true.</div>
+        <div class="attribution">For the conference</div>
+      </div>
+      <div class="mantra-card" style="background:linear-gradient(135deg,#4a5c4a,#3a4c3a);">
+        <div class="quote">Shrinking myself doesn't give my options to someone else. Using them well might actually matter.</div>
+        <div class="attribution">For the privilege guilt</div>
+      </div>
+      <div class="mantra-card" style="background:linear-gradient(135deg,#5a4c3a,#3a3428);">
+        <div class="quote">I didn't earn all of what I have. I also can't undo it. What I can do is use this freedom with intention and integrity.</div>
+        <div class="attribution">For the harder days</div>
+      </div>
+    </div>
+
+    <div class="vision-block">
+      <h2>The Season's Invitation</h2>
+      <p>Spring is the season of emergence — of things that have been quietly growing underground finally deciding to push through. You don't force spring. You create conditions for it and then you trust it.</p>
+      <br>
+      <p>That's what this season is. You're not manufacturing a transformation. You're creating the conditions: a little more space, a little less weight, a few honest conversations, some sawdust on your boots. And then you trust.</p>
+      <br>
+      <p>One more thing worth naming: you've been carrying the awareness of your privilege like a tax on your own joy. That awareness is good — it means you're paying attention. But there's a difference between awareness and penance. <strong>The goal isn't to suffer enough to feel like you've earned the right to rest.</strong> The goal is to use the rest, the freedom, the options — to build something real. To show up more fully for the people and work that matter. To become more yourself, not less.</p>
+      <br>
+      <p><em>You already know what you're becoming. You're just giving it permission.</em></p>
+    </div>
+
+    <div class="mantra-grid" style="margin-top:1rem;">
+      <div class="mantra-card" style="background:linear-gradient(135deg,#5a7a5a,#3d5c3d);">
+        <div class="quote">I don't have to have it all figured out. I just have to make one good move today.</div>
+        <div class="attribution" style="color:var(--sprout);">Daily</div>
+      </div>
+      <div class="mantra-card" style="background:linear-gradient(135deg,#4a5a6a,#3a4a5a);">
+        <div class="quote">Appropriate ownership is a gift to myself and to everyone who works with me.</div>
+        <div class="attribution" style="color:#8ab8c8;">For work</div>
+      </div>
+      <div class="mantra-card" style="background:linear-gradient(135deg,#6a5a3a,#4a3a2a);">
+        <div class="quote">Every Friday I take off is a vote for the life I am trying to build.</div>
+        <div class="attribution" style="color:#c8b880;">For Fridays</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>Ashley's Season of Becoming · Apr–Aug 2026 · Made with intention 🌿</footer>
+
+<script>
+  const intentions = [
+    { text: "Today I lean out a little and lean in a lot.", chips: ["🌿 Day Job", "🌱 Finance"], gold: false },
+    { text: "Today I make one concrete move toward the builder I'm becoming.", chips: ["🏗️ Contractor", "🌿 Hands-On"], gold: true },
+    { text: "Today I say the thing I've been avoiding saying.", chips: ["💬 Alignment", "🕯️ Honesty"], gold: false },
+    { text: "Today I follow the thread that arrived and see where it leads.", chips: ["🕯️ Spiritual", "✨ New Lead"], gold: true },
+    { text: "Today I spend in alignment with the future I'm building.", chips: ["🌱 Finance", "🌿 Resourceful"], gold: false },
+    { text: "Today I protect my energy like it belongs to me — because it does.", chips: ["🌿 Rest", "🌱 Boundaries"], gold: false },
+    { text: "Today I hold my work responsibility with a lighter hand.", chips: ["🌿 Day Job", "💬 Right-Size"], gold: false },
+    { text: "Today I use what I have before reaching for something new.", chips: ["🌱 Finance", "🏗️ Resourceful"], gold: false },
+    { text: "Today I give the conference what it needs, and no more.", chips: ["🎪 Conference", "🌿 Pace"], gold: false },
+    { text: "Today I am a guide — to others, and to myself.", chips: ["🕯️ Spiritual", "✨ Calling"], gold: true },
+    { text: "Today I let a Friday actually be a Friday.", chips: ["🌿 Day Job", "🌱 Rest"], gold: false },
+    { text: "Today I trust the becoming, even if I can't see the end yet.", chips: ["✨ Vision", "🌱 Trust"], gold: true },
+    { text: "Today I use my freedom with intention — that's what makes it worth having.", chips: ["✨ Privilege", "🌿 Integrity"], gold: true },
+    { text: "Today I rest without guilt. Suffering doesn't redistribute anything.", chips: ["🌿 Rest", "✨ Permission"], gold: false },
+  ];
+
+  let currentIntention = 0;
+
+  function getDateString() {
+    return new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+  }
+
+  function setIntention(idx) {
+    const i = intentions[idx % intentions.length];
+    document.getElementById('dailyDate').textContent = getDateString();
+    document.getElementById('dailyIntention').textContent = i.text;
+    const chips = document.getElementById('dailyChips');
+    chips.innerHTML = i.chips.map(c => `<span class="chip ${i.gold ? 'gold' : ''}">${c}</span>`).join('');
+  }
+
+  function refreshIntention() {
+    currentIntention = (currentIntention + 1) % intentions.length;
+    setIntention(currentIntention);
+  }
+
+  function show(id) {
+    const ids = ['daily','vision','streams','timeline','months','mantras'];
+    ids.forEach(sid => {
+      document.getElementById(sid).style.display = (sid === id) ? 'block' : 'none';
+    });
+    document.querySelectorAll('.nav button').forEach((b, i) => {
+      b.classList.toggle('active', ids[i] === id);
+    });
+  }
+
+  // Hide all sections on load, then show daily
+  ['daily','vision','streams','timeline','months','mantras'].forEach(sid => {
+    document.getElementById(sid).style.display = 'none';
+  });
+  show('daily');
+
+  function toggleWS(id) {
+    document.getElementById(id).classList.toggle('open');
+  }
+
+  // Init
+  const dayOfYear = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / 86400000);
+  currentIntention = dayOfYear % intentions.length;
+  setIntention(currentIntention);
+</script>
+</body>
+</html>
